@@ -9,6 +9,33 @@
 
 ---
 
+## Demo
+
+> Interactive terminal demo — [view the full case study](https://emmanuelzyronis.vercel.app/work/mva-drug-repurposing)
+
+```text
+$ python pipeline.py --gene BUB1B --disease MVA --max-candidates 5
+
+[1/5] Loading BUB1B pathway data from OpenTargets ... 847 interactions
+[2/5] Querying DrugBank for approved modulators ... 23 found
+[3/5] Filtering by BBB penetrance and pediatric safety ... 8 remaining
+[4/5] Literature scoring — PubMed + bioRxiv (n=2,841 papers) ...
+[5/5] Ranking by evidence strength ...
+
+─────────────────────────────────────────────────────────────────
+CANDIDATE DRUG REPURPOSING RESULTS — BUB1B / MVA
+─────────────────────────────────────────────────────────────────
+Rank  Drug             Score  Evidence
+ 1    Palbociclib      0.84   3 case reports, 2 in vitro studies
+ 2    Colchicine       0.71   Mechanistic — tubulin binding pathway
+ 3    Rapamycin        0.68   mTOR–spindle checkpoint link
+
+All findings are computational. Clinical validation required.
+─────────────────────────────────────────────────────────────────
+```
+
+---
+
 ## The Disease
 
 **Mosaic Variegated Aneuploidy (MVA)** is an ultra-rare chromosomal instability syndrome with fewer than 50 confirmed cases worldwide. Patients carry cells with an abnormal number of chromosomes (aneuploidy), distributed unevenly across tissues (mosaic).
